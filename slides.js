@@ -13,7 +13,7 @@ function plusSlides(n) {
 function startSlideShow() {
   slideInterval = setInterval(() => {
     plusSlides(1);
-  }, 2000); // Change 2000 to the desired interval in milliseconds
+  }, 5000); // Change 2000 to the desired interval in milliseconds
 }
 
 function showSlides(n) {
