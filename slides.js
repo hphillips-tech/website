@@ -1,36 +1,20 @@
 let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-// Automatic slideshow
 let slideInterval;
+
+showSlides(slideIndex);
+startSlideShow();
+
+function plusSlides(n) {
+  clearInterval(slideInterval); // Clear previous interval
+  showSlides(slideIndex += n);
+  startSlideShow(); // Restart the slideshow
+}
 
 function startSlideShow() {
   slideInterval = setInterval(() => {
     plusSlides(1);
-  }, 5000); // Change 2000 to the desired interval in milliseconds
+  }, 2000); // Change 2000 to the desired interval in milliseconds
 }
-
-function stopSlideShow() {
-  clearInterval(slideInterval);
-}
-
-// Start automatic slideshow
-startSlideShow();
-
-// Pauses the slideshow when hovering over the slideshow container
-let slideshowContainer = document.getElementById('slideshow-container');
-slideshowContainer.addEventListener('mouseenter', stopSlideShow);
-slideshowContainer.addEventListener('mouseleave', startSlideShow);
 
 function showSlides(n) {
   let i;
@@ -47,4 +31,3 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
-
