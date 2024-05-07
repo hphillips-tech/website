@@ -531,7 +531,76 @@ header {
     align-items: center; /* Center vertically */
 }
 
-.container img {
-    max-width: 100%;
-    max-height: 100%;
-}
+    .container img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {
+        float: left;
+        width: 75%;
+    }
+
+    .leftcolumn a{
+        text-decoration: none;
+        color: var(--clr-light);
+        font-weight: bold;
+    }
+
+    .leftcolumn a:hover{
+        color: var(--clr-accent-2);
+    }
+
+    /* Right column */
+    .rightcolumn {
+        float: right;
+        width: 25%;
+        padding-left: 20px;
+    }
+
+    .rightcolumn a{
+        text-decoration: none;
+        color: var(--clr-light);
+    }
+
+    .rightcolumn a:hover{
+        color: var(--clr-accent-2);
+    }
+    
+    /* Add a card effect for articles */
+    .card {
+        background-color: var(--clr-darker);
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: .5em;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .ratings button{
+        background-color: var(--clr-dark);
+    }
+    
+    .rating{
+        margin-right: .5em;
+        color: var(--clr-light);
+    }
+
+    .rating:hover {
+        color: var(--clr-accent-2);
+    }
+    
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+        .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+        }
+    }
